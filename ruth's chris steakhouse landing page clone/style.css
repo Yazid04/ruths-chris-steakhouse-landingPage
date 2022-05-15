@@ -1,0 +1,1189 @@
+/* default settings*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*, body, ::after, ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f2eb;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.navSection {
+    height: calc(66.5vh + 2em);
+    /*2em = upper black rectangle height*/
+}
+
+/*start of styles for navBar in smaller screen sizes*/
+.upperNav_sm-screen-layout {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #464444;
+    height: 3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3em;
+    display: none;
+    z-index: 12;
+}
+
+
+.upperNav_sm-screen-layout .Logo {
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.upperNav_sm-screen-layout .logoCont {
+    width: 4em;
+    height: 2em;
+}
+
+.upperNav_sm-screen-layout .reservations {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.reservations>.title, .fa-circle-arrow-right {
+    margin: 0 10px;
+    color: white;
+}
+
+.title {
+    font-size: .8em;
+}
+
+.upperNav_sm-screen-layout .iconsContainer {
+    color: white;
+}
+
+.iconsContainer>.fa-x, .bar {
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.iconsContainer .fa-x {
+    display: none;
+}
+
+.fa-x.showCloseBtn {
+    display: block;
+}
+
+.bar.removeBarBtn {
+    display: none;
+}
+
+.upperNav_sm-screen-layout .optionsPopUp {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #464444;
+    display: none;
+}
+
+.optionsPopUp.openOptionsPopUp {
+    height: 100vh;
+    top: calc(100vh - 93vh);
+    display: block;
+}
+
+.optionsPopUp .linksContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+    padding: 2em 0;
+    background-color: #464444;
+}
+
+.linksContainer .links {
+    color: white;
+}
+
+.links, .btns {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.linksContainer .btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 9em;
+    padding: 1em 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: white;
+    border: 1px solid rgb(238, 74, 74);
+    border-radius: 45%;
+}
+
+.btns:hover {
+    transition: .10s ease-in;
+    box-shadow: rgba(255, 0, 0, 0.507) 0px 3px 8px;
+}
+/*End of styles for navBar in smaller screen sizes*/
+
+
+
+
+/*start of styles for navBar in larger screen sizes*/
+.upperNav_lg-screen-layout>.careersOption, .findOption {
+    margin: 0 1em;
+}
+
+.upperNav_lg-screen-layout a {
+    color: white;
+}
+
+.upperNav_lg-screen-layout .findOption {
+    margin-right: 3em;
+}
+
+.upperNav_lg-screen-layout {
+    height: 2em;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 0em;
+    align-items: center;
+    position: relative;
+}
+
+
+.findOption {
+    cursor: pointer;
+}
+
+
+.upperNav_lg-screen-layout .careersOption, .findOption {
+    font-size: .7em;
+    letter-spacing: 1px;
+}
+
+
+
+.findOption .fa-angles-down {
+    padding-left: .5em;
+    pointer-events: none;
+    color: red;
+    transition: .25s ease-in;
+}
+
+.fa-angles-down.flipArrow {
+    transition: .25s ease-in;
+    transform: rotate(180deg);
+}
+
+.upperNav_lg-screen-layout .searchBarContainer {
+    position: absolute;
+    right: 0;
+    margin-top: 11em;
+    width: 35em;
+    height: 9.2em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: none;
+}
+
+.searchBarContainer.showSearchBar {
+    display: block;
+    z-index: 3;
+}
+
+.searchBarContainer .closeBtnContainer {
+    height: 3em;
+}
+
+.closeBtnContainer .closeBtn {
+    height: inherit;
+    width: 3em;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    float: right;
+    color: grey;
+}
+
+.searchBarContainer .searchInputContainer {
+    height: 4em;
+    display: flex;
+}
+
+.searchBarContainer .searchInput {
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid grey;
+    background: none;
+    padding: .8em;
+    font-size: 1.3em;
+}
+
+.searchInput:focus {
+    outline: 3px solid rgb(126, 126, 235);
+}
+
+.searchNearOption {
+    width: 80%;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: .5em;
+    color: red;
+}
+
+/*END of styles for navBar in larger screen sizes*/
+
+
+
+.overlay-home {
+    background: url('imgs/home.jpg') no-repeat center center/cover;
+    background-color: #000;
+    height: 65vh;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: inset 60px 50px 300px #000000, inset -60px -50px 300px #000000;
+}
+
+.overlay-home.hideOverlay {
+    visibility: hidden;
+}
+
+
+.overlay-home .navOptionsContainer {
+    width: 90%;
+    margin: 0 auto;
+    height: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logoBtn img {
+    height: 100%;
+    width: 100%;
+}
+
+.logoBtn {
+    width: 8em;
+    height: 4em;
+    border: none;
+    background: none;
+}
+
+.options .link {
+    color: white;
+    position: relative;
+    padding: .2em;
+}
+
+.options .link::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.options .link:hover::after {
+    transition: .25s ease-in;
+    width: 100%;
+    opacity: 1;
+}
+
+.options.shoppingCart .fa-solid {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.orderNow .orderNowBtn,
+.Reservations .reservationBtn {
+    display: flex;
+    justify-content: center;
+    padding: .6em;
+    color: white;
+    position: relative;
+}
+
+.orderNow .orderNowBtn::after {
+    content: "";
+    width: 0%;
+    background-color: red;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.orderNow .orderNowBtn:hover::after {
+    transition: .25s ease-in;
+    width: 100%;
+}
+
+.Reservations .reservationBtn::after {
+    content: "";
+    width: 0%;
+    background-color: red;
+    height: 2px;
+    position: absolute;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.Reservations .reservationBtn:hover::after {
+    transition: .25s ease-in;
+    width: 100%;
+}
+
+.ResturantInfo {
+    width: 80%;
+    margin: 0 auto;
+    height: calc(100% - 5em);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.ResturantInfo .home, .learnMoreBtn {
+    padding: 2em 0;
+}
+
+.ResturantInfo .platePicture {
+    height: 3em;
+    width: 4em;
+}
+
+.platePicture img {
+    width: 100%;
+    height: 100%;
+    color: white;
+    object-fit: contain;
+}
+
+.home>h1, p {
+    padding: .5em 0;
+}
+
+.home h1 {
+    font-size: 2.2em;
+}
+
+.home p {
+    font-size: 1.2em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.learnMoreBtn button {
+    border: none;
+    background: none;
+    height: 2.5em;
+    position: relative;
+    border-radius: 50px;
+    background-color: red;
+}
+
+.learnMoreBtn a {
+    width: 100%;
+    height: 100%;
+    color: white;
+    padding: 1em;
+}
+
+.showMidCase1 {
+    height: 50em;
+    text-align: center;
+    margin-bottom: 2em;
+    margin-top: 0;
+}
+
+
+.showMidCase1 h1 {
+    font-size: 3em;
+    font-weight: bolder;
+    color: rgb(92, 90, 90);
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.showMidCase1 p {
+    font-size: 1.5em;
+    width: 75%;
+    margin: 0 auto;
+    font-weight: lighter;
+    color: rgb(153, 152, 152);
+    line-height: 1.4em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+
+.showMidCase1 div {
+    font-size: 1.1em;
+    font-weight: bolder;
+    color: rgb(80, 79, 79);
+    width: 65%;
+    margin: 1.2em auto;
+}
+
+
+.showMidCase1 a {
+    font-size: 1.2em;
+    color: rgb(240, 46, 46);
+    text-decoration: underline;
+}
+
+.imgContainer img {
+    height: 100%;
+    width: 100%;
+}
+
+.showMidCase1 .imgContainer {
+    width: 90%;
+    margin: 0 auto;
+    height: 23em;
+    max-width: 46em;
+}
+
+.showMidCase1 button {
+    width: 25em;
+    margin-top: 5em;
+    border: none;
+    background: none;
+    height: 4em;
+    border: 1px solid #a1a19c;
+}
+
+.showMidCase1 button a {
+    text-decoration: none;
+    color: red;
+    height: 100%;
+    width: 100%;
+    padding: 1em;
+}
+
+.showMidCase1 button:hover {
+    box-shadow: rgba(240, 75, 75, 0.514) 0px 2px 8px 0px;
+    transition: .25s linear;
+    border-radius: 50px;
+}
+
+
+.showMidCase2 .title {
+    color: #555555;
+    width: 95%;
+    margin: 0 auto;
+    font-size: 2.7em;
+    padding: 10px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.showMidCase2 {
+    height: fit-content;
+    margin-top: 3em;
+}
+
+.showMidCase2 .gridContainer {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 40% 20% 40%);
+    grid-template-rows: repeat(auto-fit, minmax(25em, 25em));
+    gap: 5px;
+    max-width: 1100px;
+    padding-right: .6em;
+}
+
+
+.grides {
+    background-color: whitesmoke;
+    margin: 0 .5em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.grides img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*left side of the grid*/
+
+
+.grides.story,
+.grides.TechniqueExplains {
+    height: 21em;
+    padding: 2.5em 1.5em;
+}
+
+
+
+.story .child {
+    margin: .2em 0;
+}
+
+.child:nth-child(1) {
+    font-weight: 500;
+    font-style: italic;
+    color: grey;
+}
+
+.child:nth-child(2) {
+    color: rgb(80, 80, 80);
+    font-weight: 600;
+    font-size: 2.2em;
+}
+
+.child:nth-child(3) {
+    font-weight: 400;
+    font-family: 'Courier New', Courier, monospace;
+    color: grey;
+    line-height: 1.3em;
+}
+
+.child>a {
+    width: 100%;
+    height: 100%;
+    color: red;
+    padding: 1.1em;
+    font-weight: bolder;
+    letter-spacing: .1em;
+}
+
+.child:nth-child(4) {
+    border: none;
+    background: none;
+    width: 11em;
+    height: 3em;
+    border: 1px solid red;
+    border-radius: .8em;
+    text-align: center;
+}
+
+.grides.pic2 {
+    height: 28em;
+    /*background-color: violet;*/
+    margin-top: -3em;
+}
+
+/*End of the left side*/
+
+
+
+/*mid side*/
+.grides.text1, .grides.text2 {
+    display: grid;
+    place-content: center;
+    font-weight: bolder;
+    color: red;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/*END of the mid side*/
+
+
+/*right side of the grid*/
+.grides.pic1 {
+    height: 28em;
+}
+
+.grides.TechniqueExplains {
+    margin-top: 4em;
+}
+
+/*End of the right side*/
+
+.showCasePromote {
+    width: 92%;
+    margin: 0 auto;
+    height: 40em;
+}
+
+.showCasePromote .containers {
+    width: 90%;
+    margin: 0 auto;
+    padding: 4em 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.containers img {
+    height: 100%;
+    width: 100%;
+    opacity: .2;
+}
+
+.container.first, .container.second {
+    position: relative;
+}
+
+
+.container.first:hover img {
+    transition: .25s ease-in-out;
+    opacity: .8;
+    transform: scale(1.1, 1.1);
+}
+
+
+.containers .container {
+    width: 30em;
+    height: 30em;
+    background-color: grey;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.container:nth-child(1) {
+    background-color: #c52b33;
+}
+
+.container .giftPromote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    padding: 7em 2em;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.giftPromote .elements {
+    padding: 1em 0;
+}
+
+.elements .fa-gift {
+    font-size: 2em;
+}
+
+.elements h2 {
+    width: 100%;
+    margin: auto;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.elements p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.elements .fa-circle-arrow-right {
+    font-size: larger;
+}
+
+
+.container.second img {
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    position: relative;
+    z-index: 3;
+    opacity: .2;
+}
+
+.container.second::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(82, 82, 82);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+.container.second:hover img {
+    transition: .25s ease-in-out;
+    opacity: .5;
+    transform: scale(1.1, 1.1);
+    z-index: 1;
+}
+
+.container.second .giftPromote {
+    z-index: 3;
+}
+
+.Ending {
+    height: 30em;
+    background-color: rgb(92, 92, 92);
+    position: relative;
+}
+
+.Ending .rectangle {
+    position: absolute;
+    top: -6%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50%;
+    margin: 0 auto;
+    height: 2em;
+    background-color: rgb(92, 92, 92);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.rectangle {
+    position: relative;
+}
+
+.rectangle .leftCirc,
+.rectangle .rightCirc {
+    height: 1.5em;
+    width: 1.5em;
+    background-color: #f3f2eb;
+    border-radius: 50%;
+    margin-top: -.5em;
+}
+
+.rectangle .leftCirc {
+    margin-left: -.5em;
+}
+
+.rectangle .rightCirc {
+    margin-right: -.5em;
+}
+
+
+.refrenceLinksContainer {
+    height: 10em;
+    background-color: rgb(92, 92, 92);
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    margin-top: 2em;
+}
+
+
+.refrenceLinks {
+    width: 85%;
+    margin: 0 auto;
+    height: 50%;
+    background-color: rgb(92, 92, 92);
+    max-width: 65em;
+}
+
+.refrenceLinks .ulLinks {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(92, 92, 92);
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 0 1em;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.links a {
+    font-size: .6em;
+    margin: 0em 1em;
+    color: rgb(172, 172, 172);
+    letter-spacing: .2em;
+}
+
+.links a:hover {
+    transition: .20s ease-in;
+    color: white;
+}
+
+
+.addressContainer {
+    height: 10em;
+    width: 81.6%;
+    margin: 0 auto;
+    background-color: rgb(92, 92, 92);
+    text-align: center;
+    color: white;
+}
+
+.addressContainer .socialMediaIcons {
+    padding: 1em;
+}
+
+.socialMediaIcons a {
+    margin: 0 1em;
+    font-size: 1.5em;
+    color: white;
+}
+
+.address p, h4 {
+    margin: 1em 0;
+}
+
+.address p {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.address h4 {
+    letter-spacing: .1em;
+}
+
+/*fixed nav according to screen size*/
+@media screen and (max-width: 1025px) {
+    .upperNav_lg-screen-layout {
+        display: none;
+    }
+
+    .overlay-home .navOptionsContainer {
+        display: none;
+    }
+
+    .upperNav_sm-screen-layout {
+        display: flex;
+    }
+}
+
+
+/*mobile sizes screen*/
+@media screen and (max-width: 650px) {
+    .overlay-home {
+        height: 78vh;
+    }
+
+
+    .showMidCase1 {
+        margin-top: 9em;
+        height: fit-content;
+    }
+
+    .showMidCase1 h1 {
+        font-size: 1.5em;
+    }
+
+    .showMidCase1 p {
+        font-size: 1.1em;
+    }
+
+    .showMidCase1 .learnMore {
+        font-size: .9em;
+        padding: .2em;
+    }
+
+    .showMidCase1 .imgContainer {
+        width: 75%;
+        margin: 0 auto;
+        height: 12em;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .showMidCase1 button {
+        width: 24em;
+        height: 3em;
+    }
+
+    .showMidCase1 button a {
+        height: 100%;
+        width: 100%;
+        padding: 1em;
+        font-size: 1em;
+    }
+
+    .showMidCase2 .title {
+        width: 90%;
+        margin: 1em auto;
+        font-size: 2em;
+        padding: 10px;
+    }
+
+    .showMidCase2 .gridContainer {
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+        display: grid;
+        place-content: center;
+        grid-template-columns: repeat(1, 21em);
+        grid-template-rows: repeat(auto-fill, 21em);
+        gap: 30px;
+        max-width: 1100px;
+        padding-right: 0;
+    }
+
+    .gridContainer .child {
+        margin: .5em 0;
+    }
+
+    .grides.pic1,
+    .grides.pic2 {
+        margin-top: .5em;
+    }
+
+    /*<h2>legacy</h2>*/
+    .child:nth-child(1) {
+        font-size: .9em;
+    }
+
+    /*<h1>A RARE STORY</h1>*/
+    .child:nth-child(2) {
+        font-size: 1.1em;
+    }
+
+    /*<p>paragpraph</p>*/
+    .child:nth-child(3) {
+        font-size: .9em;
+        line-height: 1.3em;
+    }
+
+    /*text inside the btn*/
+    .child>a {
+        width: 100%;
+        height: 100%;
+        color: red;
+        padding: 1.1em;
+        font-weight: bolder;
+        letter-spacing: .1em;
+    }
+
+    /*<button>OUR STORY</button>*/
+    .child:nth-child(4) {
+        border: none;
+        background: none;
+        width: 11em;
+        height: 3em;
+        border: 1px solid red;
+        border-radius: .8em;
+        text-align: center;
+    }
+
+    .grides.TechniqueExplains {
+        margin-top: 0em;
+    }
+
+    .showCasePromote {
+        height: auto;
+    }
+
+    .showCasePromote .containers {
+        width: 80%;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 3em;
+    }
+
+    .containers .container {
+        width: 100%;
+        height: 22em;
+        margin: 1em 0;
+        padding: .5em 0;
+    }
+    .giftPromote .elements {
+        padding: .5em 0;
+    }
+
+    .elements h2{
+        font-size: 1.7em;
+    }
+
+    .Ending {
+        margin-top: 5em;
+    }
+}
+
+/*tablet sizes*/
+@media screen and (max-width: 900px) and (min-width: 651px) {
+    .overlay-home {
+        height: 100vh;
+    }
+
+    .ResturantInfo {
+        width: 90%;
+        margin: 0 auto;
+        height: 30em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ResturantInfo .home h1 {
+        font-size: 2.5em;
+    }
+
+    .home p {
+        font-size: 1em;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .showMidCase1 {
+        margin-top: 28em;
+    }
+
+    .showMidCase1 h1 {
+        font-size: 2em;
+    }
+
+    .showMidCase1 p {
+        font-size: 1.1em;
+        color: rgb(104, 104, 104);
+    }
+
+    .showMidCase1 .imgContainer {
+        width: 70%;
+        margin: 0 auto;
+        height: 15em;
+        max-width: 32em;
+    }
+
+    .showMidCase1 {
+        height: fit-content;
+    }
+
+    .showMidCase2 .gridContainer {
+        width: 90%;
+        margin: 0 auto;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto-fit, minmax(25em, 25em));
+        gap: 5px;
+        max-width: 1100px;
+        padding-right: .6em;
+    }
+
+    .grides.story,
+    .grides.TechniqueExplains {
+        height: 25em;
+        padding: 2.5em 1.5em;
+    }
+
+    .story .child {
+        margin: .2em 0;
+    }
+
+    .grides.pic2 {
+        height: 28em;
+        margin-top: 0em;
+    }
+
+    .grides.TechniqueExplains {
+        margin-top: 0em;
+    }
+
+    .grides {
+        margin: 0;
+    }
+
+    .gridContainer .child {
+        margin: .7em 0;
+    }
+
+
+    /*<h2>legacy</h2>*/
+    .child:nth-child(1) {
+        font-size: 1.1em;
+    }
+
+    /*<h1>A RARE STORY</h1>*/
+    .child:nth-child(2) {
+        font-size: 1.3em;
+    }
+
+    /*<p>paragpraph</p>*/
+    .child:nth-child(3) {
+        font-size: .9em;
+        line-height: 1.5em;
+    }
+
+    /*text inside the btn*/
+    .child>a {
+        width: 100%;
+        height: 100%;
+        color: red;
+        padding: 1.1em;
+        font-weight: bolder;
+        letter-spacing: .2em;
+    }
+
+    /*<button>OUR STORY</button>*/
+    .child:nth-child(4) {
+        border: none;
+        background: none;
+        width: 11em;
+        height: 3em;
+        border: 1px solid red;
+        border-radius: .8em;
+        text-align: center;
+    }
+}
+
+
+
+
+/*3x grid container*/
+@media screen and (max-width: 1200px) and (min-width: 901px) {
+    .ResturantInfo {
+        width: 90%;
+        margin: 0 auto;
+        height: 30em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .showMidCase2 .gridContainer {
+        grid-template-columns: repeat(auto-fit, 1fr);
+        max-width: 52em;
+    }
+
+    .grides.story,
+    .grides.TechniqueExplains {
+        height: 27em;
+    }
+
+    .grides.pic2 {
+        margin-top: 3em;
+    }
+}
